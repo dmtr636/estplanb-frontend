@@ -1,16 +1,12 @@
 @import "src/styles/vars";
+@import "../Header/style.module";
 
 .button {
+    @include navLink;
     position: relative;
     display: flex;
     align-items: center;
     gap: 4px;
-
-    &:hover {
-        path {
-            fill: $color-primary;
-        }
-    }
 
     &.open {
         .chevron {
@@ -39,6 +35,7 @@
 }
 
 .menuLink {
+    @include navLink;
     display: block;
     padding: 10px 16px;
     text-align: start;

@@ -13,7 +13,7 @@ const NavDropdown = (props: {
 
     return (
         <button
-            className={classNames(props.className, styles.button, {
+            className={classNames(styles.button, {
                 [styles.open]: isOpen,
             })}
             onMouseEnter={() => setOpen(true)}
@@ -27,10 +27,7 @@ const NavDropdown = (props: {
                         {props.menu.map((link) => (
                             <Link
                                 href={link.path}
-                                className={classNames(
-                                    props.className,
-                                    styles.menuLink,
-                                )}
+                                className={styles.menuLink}
                                 key={link.name}
                             >
                                 {link.name}
