@@ -1,0 +1,56 @@
+@import "src/styles/vars";
+
+.topPanel {
+    height: 60px;
+    background: $color-primary;
+}
+
+.content {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding-left: 195px;
+    display: flex;
+}
+
+.block {
+    display: flex;
+    align-items: center;
+
+    &.left {
+        gap: 30px;
+    }
+    &.right {
+        margin-left: auto;
+        gap: 20px;
+    }
+}
+
+.linkItem {
+    display: flex;
+    align-items: start;
+    gap: 10px;
+
+    &:hover {
+        opacity: 0.85;
+    }
+}
+
+.text {
+    font-family: var(--font-manrope);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: #ffffff;
+
+    .star {
+        vertical-align: -2px;
+    }
+}
+
+.divider {
+    height: 25px;
+    border-left: 1px solid white;
+    margin-right: -1px;
+}

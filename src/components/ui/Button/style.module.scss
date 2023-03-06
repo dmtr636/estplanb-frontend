@@ -1,0 +1,30 @@
+@import "src/styles/vars";
+
+.button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 21px;
+    border-radius: 10px;
+
+    font-family: var(--font-manrope);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: $color-red;
+
+    &.small {
+        height: 40px;
+    }
+
+    &.outlined {
+        border: 2px solid $color-red;
+        padding: 0 19px;
+
+        &:hover {
+            border-color: transparent;
+            background: $color-red-hover-light;
+        }
+    }
+}

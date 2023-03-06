@@ -1,0 +1,47 @@
+@import "src/styles/vars";
+
+.header {
+    position: sticky;
+    top: 0;
+    height: 80px;
+    background: white;
+    box-shadow: 0px 8px 6px rgba(153, 226, 236, 0.15);
+}
+
+.content {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.nav {
+    margin-left: 50px;
+    display: flex;
+    gap: 26px;
+}
+
+.navLink {
+    font-family: var(--font-manrope);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+    color: $color-black;
+    transition: color ease-out 200ms;
+
+    &:hover {
+        color: $color-primary;
+    }
+}
+
+.button {
+    margin-left: auto;
+}
