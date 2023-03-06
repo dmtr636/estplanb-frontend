@@ -4,16 +4,53 @@ import Logo from "@/assets/layout/header/logo.svg";
 import PhoneIcon from "@/assets/layout/header/phone.svg";
 import Link from "next/link";
 import Button from "@/components/ui/Button/Button";
+import NavDropdown from "@/components/layout/NavDropdown/NavDropdown";
 
 const Header = () => {
     const links = [
         {
             name: "Купить",
             path: "/",
+            menu: [
+                {
+                    name: "Вторичная недвижимость",
+                    path: "/",
+                },
+                {
+                    name: "Новостройки",
+                    path: "/",
+                },
+                {
+                    name: "Дома",
+                    path: "/",
+                },
+                {
+                    name: "Участки",
+                    path: "/",
+                },
+                {
+                    name: "Комнаты",
+                    path: "/",
+                },
+                {
+                    name: "Коммерческая",
+                    path: "/",
+                },
+            ],
         },
         {
             name: "Аренда",
             path: "/",
+            menu: [
+                {
+                    name: "Посуточно",
+                    path: "/",
+                },
+                {
+                    name: "Долгосрочная аренда",
+                    path: "/",
+                },
+            ],
         },
         {
             name: "Продать",
@@ -44,15 +81,25 @@ const Header = () => {
                     <Logo />
                 </Link>
                 <nav className={styles.nav}>
-                    {links.map((link) => (
-                        <Link
-                            href={link.path}
-                            key={link.name}
-                            className={styles.navLink}
-                        >
-                            {link.name}
-                        </Link>
-                    ))}
+                    {links.map((link) =>
+                        link.menu ? (
+                            <NavDropdown
+                                key={link.name}
+                                className={styles.navLink}
+                                menu={link.menu}
+                            >
+                                {link.name}
+                            </NavDropdown>
+                        ) : (
+                            <Link
+                                href={link.path}
+                                key={link.name}
+                                className={styles.navLink}
+                            >
+                                {link.name}
+                            </Link>
+                        ),
+                    )}
                 </nav>
                 <div className={styles.button}>
                     <Button

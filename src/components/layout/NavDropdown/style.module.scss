@@ -1,0 +1,51 @@
+@import "src/styles/vars";
+
+.button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    &:hover {
+        path {
+            fill: $color-primary;
+        }
+    }
+
+    &.open {
+        .chevron {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.chevron {
+    transition: transform ease-out 200ms;
+}
+
+.menuWrapper {
+    position: absolute;
+    left: -10px;
+    top: 0;
+    padding: 70px 10px 10px 10px;
+    cursor: initial;
+}
+
+.menu {
+    padding: 16px 20px;
+    background: #ffffff;
+    box-shadow: 0px 0px 6px rgba(153, 226, 236, 0.45);
+    border-radius: 0px 10px 10px 10px;
+}
+
+.menuLink {
+    display: block;
+    padding: 10px 16px;
+    text-align: start;
+    white-space: nowrap;
+    border-radius: 5px;
+
+    &:hover {
+        background: $color-primary-hover-light;
+    }
+}

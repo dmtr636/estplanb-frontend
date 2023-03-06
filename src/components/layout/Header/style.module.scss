@@ -34,8 +34,11 @@
     font-weight: 600;
     font-size: 15px;
     line-height: 20px;
+    padding: 10px 0;
+    cursor: pointer;
     color: $color-black;
     transition: color ease-out 200ms;
+    z-index: 1;
 
     &:hover {
         color: $color-primary;
