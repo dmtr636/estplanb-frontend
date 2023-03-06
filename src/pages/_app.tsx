@@ -17,6 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
                     name="viewport"
                     content="width=device-width, initial-scale=1"
                 />
+                <link rel="icon" type="image/png" href="favicon.png" />
             </Head>
             <div className={manrope.variable}>
                 <Layout>
