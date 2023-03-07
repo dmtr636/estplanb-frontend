@@ -18,6 +18,19 @@
         height: 40px;
     }
 
+    &.medium {
+        height: 46px;
+    }
+
+    &.contained {
+        background: $color-red;
+        color: white;
+
+        &:hover {
+            background: $color-red-hover;
+        }
+    }
+
     &.outlined {
         border: 2px solid $color-red;
         padding: 0 19px;

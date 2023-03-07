@@ -1,0 +1,74 @@
+@import "src/styles/vars";
+
+.sliderWrapper {
+    width: 1200px;
+    height: 428px;
+    margin: 40px auto;
+    background: #ffffff;
+    box-shadow: 0px 0px 6px rgba(153, 226, 236, 0.45);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slider {
+    height: 100%;
+}
+
+.slide {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 194px;
+    cursor: grab;
+    font-family: var(--font-manrope);
+    color: $color-black;
+
+    &.bgDark {
+        color: white;
+    }
+}
+
+.header {
+    max-width: 600px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 100%;
+}
+
+.text {
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+}
+
+.button {
+    margin-top: auto;
+}
+
+.pagination {
+    position: absolute !important;
+    right: 198px !important;
+    bottom: 73px !important;
+    left: unset !important;
+    width: auto !important;
+    display: flex !important;
+    gap: 16px;
+}
+
+.bullet {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: $color-red;
+    opacity: 0.3;
+
+    &.active {
+        pointer-events: none;
+        opacity: 1;
+    }
+
+    &:hover {
+        opacity: 0.5;
+    }
+}

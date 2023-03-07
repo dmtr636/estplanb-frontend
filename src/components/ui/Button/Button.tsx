@@ -11,6 +11,9 @@ const Button = (props: {
     size?: "small" | "medium";
     variant?: "contained" | "outlined";
 }) => {
+    const size = props.size ?? "medium";
+    const variant = props.variant ?? "contained";
+
     if (props.href) {
         return (
             <Link href={props.href} className={styles.button}>
@@ -21,8 +24,10 @@ const Button = (props: {
         return (
             <button
                 className={classNames(styles.button, {
-                    [styles.small]: props.size === "small",
-                    [styles.outlined]: props.variant === "outlined",
+                    [styles.small]: size === "small",
+                    [styles.medium]: size === "medium",
+                    [styles.contained]: variant === "contained",
+                    [styles.outlined]: variant === "outlined",
                 })}
                 onClick={props.onClick}
             >
