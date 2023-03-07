@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Slider from "@/components/main/Slider/Slider";
 
-export default function Home() {
+const MainPage = () => {
     return (
         <>
             <Head>
@@ -12,4 +12,6 @@ export default function Home() {
             </div>
         </>
     );
-}
+};
+
+export default MainPage;
