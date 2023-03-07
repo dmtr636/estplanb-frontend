@@ -5,74 +5,16 @@ import PhoneIcon from "@/assets/layout/header/phone.svg";
 import Link from "next/link";
 import Button from "@/components/ui/Button/Button";
 import NavDropdown from "@/components/layout/NavDropdown/NavDropdown";
+import { navRoutes } from "@/routes/navRoutes";
+import { useRouter } from "next/router";
+import classNames from "classnames";
 
 const Header = () => {
-    const links = [
-        {
-            name: "Купить",
-            path: "/",
-            menu: [
-                {
-                    name: "Вторичная недвижимость",
-                    path: "/",
-                },
-                {
-                    name: "Новостройки",
-                    path: "/",
-                },
-                {
-                    name: "Дома",
-                    path: "/",
-                },
-                {
-                    name: "Участки",
-                    path: "/",
-                },
-                {
-                    name: "Комнаты",
-                    path: "/",
-                },
-                {
-                    name: "Коммерческая",
-                    path: "/",
-                },
-            ],
-        },
-        {
-            name: "Аренда",
-            path: "/",
-            menu: [
-                {
-                    name: "Посуточно",
-                    path: "/",
-                },
-                {
-                    name: "Долгосрочная аренда",
-                    path: "/",
-                },
-            ],
-        },
-        {
-            name: "Продать",
-            path: "/",
-        },
-        {
-            name: "Ипотека",
-            path: "/",
-        },
-        {
-            name: "3D-туры",
-            path: "/",
-        },
-        {
-            name: "Карьера",
-            path: "/",
-        },
-        {
-            name: "Партнёры",
-            path: "/",
-        },
-    ];
+    const router = useRouter();
+
+    const isActive = (route: { path: string }) => {
+        return route.path === router.pathname;
+    };
 
     return (
         <header className={styles.header}>
@@ -81,22 +23,24 @@ const Header = () => {
                     <Logo />
                 </Link>
                 <nav className={styles.nav}>
-                    {links.map((link) =>
-                        link.menu ? (
+                    {navRoutes.map((route) =>
+                        route.menu ? (
                             <NavDropdown
-                                key={link.name}
+                                key={route.name}
                                 className={styles.navLink}
-                                menu={link.menu}
+                                menu={route.menu}
                             >
-                                {link.name}
+                                {route.name}
                             </NavDropdown>
                         ) : (
                             <Link
-                                href={link.path}
-                                key={link.name}
-                                className={styles.navLink}
+                                href={route.path}
+                                key={route.name}
+                                className={classNames(styles.navLink, {
+                                    [styles.active]: isActive(route),
+                                })}
                             >
-                                {link.name}
+                                {route.name}
                             </Link>
                         ),
                     )}

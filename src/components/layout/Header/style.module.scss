@@ -41,16 +41,21 @@
     transition: color ease-out 200ms;
     z-index: 10;
 
+    path {
+        fill: currentColor;
+    }
+
     &:hover {
         color: $color-primary;
-        path {
-            fill: $color-primary;
-        }
     }
 }
 
 .navLink {
     @include navLink;
+
+    &.active {
+        color: $color-primary;
+    }
 }
 
 .button {
