@@ -1,13 +1,21 @@
+@import "vars";
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+body {
+    overflow: overlay;
+    background: $color-primary-light;
+}
+
 button,
 a {
     text-decoration: none;
     cursor: pointer;
+    font-family: unset;
     -webkit-user-drag: none;
 }
 
@@ -25,9 +33,4 @@ button:disabled {
 
 img {
     display: block;
-}
-
-body {
-    background: #f4f9fc;
-    overflow: overlay;
 }

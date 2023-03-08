@@ -41,9 +41,6 @@ const Slider = () => {
         horizontalClass: styles.pagination,
         bulletClass: styles.bullet,
         bulletActiveClass: styles.active,
-        renderBullet: (_, className: string) => {
-            return `<div class="${className}"></div>`;
-        },
     };
 
     return (
