@@ -1,8 +1,8 @@
 export interface ISlide {
     header: string;
     text: string;
-    buttonText: string;
-    buttonLink?: string;
-    bgUrl: string;
-    textColor: "dark" | "light";
+    button_text: string;
+    button_link?: string;
+    image: string;
+    text_color: "dark" | "light";
 }
