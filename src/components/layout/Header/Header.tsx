@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 import Logo from "@/assets/layout/header/logo.svg";
 import PhoneIcon from "@/assets/layout/header/phone.svg";
@@ -11,13 +11,29 @@ import classNames from "classnames";
 
 const Header = () => {
     const router = useRouter();
+    const [isScrolling, setScrolling] = useState(false);
+
+    const handleScroll = () => {
+        setScrolling(!!window.scrollY);
+    };
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
     const isActive = (route: { path: string }) => {
         return route.path === router.pathname;
     };
 
     return (
-        <header className={styles.header}>
+        <header
+            className={classNames(styles.header, {
+                [styles.scrolling]: isScrolling,
+            })}
+        >
             <div className={styles.content}>
                 <Link href={"/"} className={styles.logo}>
                     <Logo />

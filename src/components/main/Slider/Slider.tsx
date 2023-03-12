@@ -16,7 +16,6 @@ import Link from "next/link";
 
 const Slider = () => {
     const { slides } = useSlides();
-    console.log(slides);
 
     const renderSlide = (slide: ISlide, index: number) => (
         <SwiperSlide

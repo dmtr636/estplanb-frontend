@@ -5,8 +5,11 @@
     top: 0;
     height: 80px;
     background: white;
-    box-shadow: 0px 8px 6px rgba(153, 226, 236, 0.15);
     z-index: 20;
+
+    &.scrolling {
+        box-shadow: 0px 8px 6px rgba(153, 226, 236, 0.15);
+    }
 }
 
 .content {
