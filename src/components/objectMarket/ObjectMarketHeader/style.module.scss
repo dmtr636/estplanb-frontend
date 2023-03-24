@@ -1,0 +1,29 @@
+@import "src/styles/vars";
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 100%;
+    color: $color-primary;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+}
+
+.selectCategory {
+    width: 327px;
+    border-radius: 10px 0px 0px 0px;
+}
+
+.selectDealType {
+    width: 171px;
+    border-radius: 0px 10px 0px 0px;
+}

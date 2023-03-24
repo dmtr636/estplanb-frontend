@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 import Logo from "@/assets/layout/header/logo.svg";
 import PhoneIcon from "@/assets/layout/header/phone.svg";
+import WhatsAppIcon from "@/assets/layout/header/whatsapp.svg";
 import Link from "next/link";
 import Button from "@/components/ui/Button/Button";
 import NavDropdown from "@/components/layout/NavDropdown/NavDropdown";
@@ -39,29 +40,31 @@ const Header = () => {
                     <Logo />
                 </Link>
                 <nav className={styles.nav}>
-                    {navRoutes.map((route) =>
-                        route.menu ? (
-                            <NavDropdown
-                                key={route.name}
-                                className={styles.navLink}
-                                menu={route.menu}
-                            >
-                                {route.name}
-                            </NavDropdown>
-                        ) : (
-                            <Link
-                                href={route.path}
-                                key={route.name}
-                                className={classNames(styles.navLink, {
-                                    [styles.active]: isActive(route),
-                                })}
-                            >
-                                {route.name}
-                            </Link>
-                        ),
-                    )}
+                    {navRoutes.map((route) => (
+                        <Link
+                            href={route.path}
+                            key={route.name}
+                            className={classNames(styles.navLink, {
+                                [styles.active]: isActive(route),
+                            })}
+                        >
+                            {route.menu ? (
+                                <NavDropdown menu={route.menu}>
+                                    {route.name}
+                                </NavDropdown>
+                            ) : (
+                                route.name
+                            )}
+                        </Link>
+                    ))}
                 </nav>
-                <div className={styles.button}>
+                <div className={styles.buttons}>
+                    <a
+                        className={styles.whatsappButton}
+                        href={"https://web.whatsapp.com/send?phone=79307584989"}
+                    >
+                        <WhatsAppIcon />
+                    </a>
                     <Button
                         icon={<PhoneIcon />}
                         size={"small"}

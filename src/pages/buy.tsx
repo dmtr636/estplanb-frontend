@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import ObjectMarket from "@/components/objectMarket/ObjectMarket/ObjectMarket";
 
 const BuyPage = () => {
     return (
@@ -7,7 +8,7 @@ const BuyPage = () => {
             <Head>
                 <title>Купить</title>
             </Head>
-            <h1>Купить</h1>
+            <ObjectMarket />
         </div>
     );
 };

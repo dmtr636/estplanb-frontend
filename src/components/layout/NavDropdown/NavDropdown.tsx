@@ -1,13 +1,12 @@
 import React, { ReactNode, useState } from "react";
 import classNames from "classnames";
-import Chevron from "@/assets/layout/header/chevron.svg";
+import Chevron from "@/assets/icons/chevronSmall.svg";
 import styles from "./style.module.scss";
 import Link from "next/link";
 
 const NavDropdown = (props: {
     children: ReactNode;
     menu: { name: string; path: string }[];
-    className?: string;
 }) => {
     const [isOpen, setOpen] = useState(false);
 

@@ -1,0 +1,57 @@
+@import "src/styles/vars";
+@import "src/components/layout/Header/style.module";
+
+.container {
+    position: relative;
+}
+
+.select {
+    height: 49px;
+    background: $color-primary;
+    padding: 0 21px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    color: white;
+
+    &:hover {
+        background: $color-primary-hover;
+    }
+}
+
+.chevron {
+    transition: transform ease-out 0.2s;
+
+    &.open {
+        transform: rotate(180deg);
+    }
+}
+
+.dropdown {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 59px;
+    padding: 16px 20px;
+    background: #ffffff;
+    box-shadow: 0px 0px 6px rgba(153, 226, 236, 0.45);
+    border-radius: 0px 0px 10px 10px;
+}
+
+.menuLink {
+    @include navLink;
+    width: 100%;
+    display: block;
+    padding: 10px 16px;
+    text-align: start;
+    white-space: nowrap;
+    border-radius: 5px;
+
+    &:hover {
+        background: $color-primary-light;
+    }
+}
