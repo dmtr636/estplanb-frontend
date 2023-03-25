@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import ObjectMarket from "@/components/objectMarket/ObjectMarket/ObjectMarket";
+import ObjectMarket from "@/components/objectList/ObjectList/ObjectList";
 
 const BuyPage = () => {
     return (

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./style.module.scss";
-import LocationIcon from "@/assets/layout/topPanel/location.svg";
+import LocationIcon from "@/assets/icons/location.svg";
 import MailIcon from "@/assets/layout/topPanel/mail.svg";
 import PhoneIcon from "@/assets/layout/topPanel/phone.svg";
 import classNames from "classnames";

@@ -6,6 +6,7 @@ import { useDocumentClick } from "@/hooks/useDocumentClick";
 
 export interface ISelectOption {
     name: string;
+    value: string;
 }
 
 const Select = <T extends ISelectOption>(props: {

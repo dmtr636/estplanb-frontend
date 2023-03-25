@@ -1,3 +1,7 @@
-// eslint-disable-next-line no-undef
-export const fetcher = (url: string, init?: RequestInit) =>
-    fetch(url, init).then((res) => res.json());
+export const fetcher = async <JSON = never>(
+    input: RequestInfo,
+    init?: RequestInit,
+): Promise<JSON> => {
+    const res = await fetch(input, init);
+    return res.json();
+};

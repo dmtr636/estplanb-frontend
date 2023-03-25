@@ -2,9 +2,16 @@
     max-width: 1280px;
     padding: 40px;
     margin: 0 auto;
+    display: grid;
+    grid-gap: 40px;
 }
 
 .topSelects {
     display: flex;
     gap: 10px;
+}
+
+.list {
+    display: grid;
+    grid-gap: 30px;
 }

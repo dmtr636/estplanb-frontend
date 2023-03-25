@@ -2,17 +2,17 @@ import React from "react";
 import styles from "./style.module.scss";
 import Select from "@/components/ui/Select/Select";
 import { objectCategories } from "@/constants/objectMarket/objectCategories";
-import { objectMarketStore } from "@/stores/objectMarketStore";
+import { objectListStore } from "@/stores/objectListStore";
 import { observer } from "mobx-react-lite";
 import { dealTypes } from "@/constants/objectMarket/dealTypes";
 
-const ObjectMarketHeader = () => {
-    const store = objectMarketStore;
+const ObjectListHeader = () => {
+    const store = objectListStore;
 
     return (
         <div className={styles.header}>
             <div className={styles.title}>
-                {store.dealType.name === "Аренда"
+                {store.dealType.value === "rent"
                     ? "Снять недвижимость в Калуге"
                     : "Купить недвижимость в Калуге"}
             </div>
@@ -34,4 +34,4 @@ const ObjectMarketHeader = () => {
     );
 };
 
-export default observer(ObjectMarketHeader);
+export default observer(ObjectListHeader);

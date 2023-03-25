@@ -1,0 +1,111 @@
+@import "src/styles/vars";
+
+.container {
+    background: #ffffff;
+    box-shadow: 0px 0px 10px rgba(153, 226, 236, 0.45);
+    border-radius: 10px;
+    padding: 40px 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    cursor: pointer;
+
+    &:hover {
+        background: $color-primary-light;
+    }
+}
+
+.images {
+    display: grid;
+    grid-template-columns: 380px 160px;
+    grid-template-rows: 150px 150px;
+    grid-gap: 18px;
+}
+
+.image {
+    background-color: rgba(0, 0, 0, 0.11);
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+
+    &:first-child {
+        grid-row: span 2;
+    }
+}
+
+.placeholderText {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 120%;
+    letter-spacing: -0.015em;
+    color: #ffffff;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 100%;
+    color: $color-primary;
+
+    .sup {
+        font-size: 16px;
+        vertical-align: 6px;
+    }
+}
+
+.skeletonImage {
+    background-color: rgba(0, 0, 0, 0.11);
+    border-radius: 5px;
+    animation: animation 1.5s ease-in-out 0.5s infinite;
+
+    @keyframes animation {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.4;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    &:first-child {
+        grid-row: span 2;
+    }
+}
+
+.address {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 9px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    color: $color-black;
+
+    path {
+        stroke: $color-black;
+    }
+}
+
+.article {
+    margin-top: 13px;
+}
+
+.description {
+    margin-top: 32px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+    color: $color-black;
+    opacity: 0.5;
+}
