@@ -47,7 +47,7 @@ export const roomCountOptions: IFilterSelectOption[] = [
         name: "Свободная планировка",
         value: "free",
         filter: {
-            studio: 1,
+            rooms__isnull: true,
         },
     },
 ];

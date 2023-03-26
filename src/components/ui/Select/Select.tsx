@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./style.module.scss";
 import Chevron from "@/assets/icons/chevron.svg";
 import classNames from "classnames";
 import { useDocumentClick } from "@/hooks/useDocumentClick";
 import CheckIcon from "@/assets/icons/check.svg";
+import { useOnClickOutside } from "@/hooks/useOnClickOuside";
 
 export interface ISelectOption {
     name: string;
@@ -38,7 +39,7 @@ type ISelectProps<T> = ISingleSelect<T> | IMultipleSelect<T>;
 
 const Select = <T extends ISelectOption>(props: ISelectProps<T>) => {
     const [isOpen, setOpen] = useState(false);
-    useDocumentClick(() => setOpen(false));
+    const ref = useOnClickOutside(() => setOpen(false));
 
     const handleChange = (option: T) => {
         if (props.multiple) {
@@ -87,10 +88,7 @@ const Select = <T extends ISelectOption>(props: ISelectProps<T>) => {
     };
 
     return (
-        <div
-            className={styles.container}
-            onClick={(event) => event.stopPropagation()}
-        >
+        <div className={styles.container} ref={ref}>
             <button
                 className={classNames(styles.select, props.classes?.select, {
                     [styles.small]: props.size === "small",

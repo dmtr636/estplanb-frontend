@@ -11,6 +11,8 @@ class ObjectListStore {
     category: IFilterSelectOption = objectCategories[0];
     dealType: IFilterSelectOption = dealTypes[0];
     roomNumbers: IFilterSelectOption[] = [];
+    priceFrom = 0;
+    priceTo = 100_000_000;
 
     setCategory(category: IFilterSelectOption) {
         this.category = category;
@@ -22,6 +24,14 @@ class ObjectListStore {
 
     setRoomNumbers(roomNumbers: IFilterSelectOption[]) {
         this.roomNumbers = roomNumbers;
+    }
+
+    setPriceFrom(value: number) {
+        this.priceFrom = value;
+    }
+
+    setPriceTo(value: number) {
+        this.priceTo = value;
     }
 
     get preparedFilter() {

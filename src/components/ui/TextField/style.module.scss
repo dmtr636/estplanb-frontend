@@ -1,0 +1,23 @@
+@import "src/styles/vars";
+
+.container {
+}
+
+.label {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+    color: $color-primary;
+}
+
+.input {
+    width: 100%;
+    padding: 11px 18px;
+    border: 1px solid $color-primary;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: $color-black;
+}

@@ -4,6 +4,7 @@ import styles from "./style.module.scss";
 import Select from "@/components/ui/Select/Select";
 import { roomCountOptions } from "@/constants/objectMarket/roomCountOptions";
 import { objectListStore } from "@/stores/objectListStore";
+import RangePicker from "@/components/ui/RangePicker/RangePicker";
 
 const ObjectListSearchPanel = () => {
     const store = objectListStore;
@@ -22,6 +23,16 @@ const ObjectListSearchPanel = () => {
                 }}
                 size={"small"}
                 variant={"outlined"}
+            />
+            <RangePicker
+                fromValue={store.priceFrom}
+                toValue={store.priceTo}
+                onChangeFromValue={(value) => store.setPriceFrom(value)}
+                onChangeToValue={(value) => store.setPriceTo(value)}
+                title={"Цена"}
+                classes={{
+                    dropdown: styles.pricePickerDropdown,
+                }}
             />
             <div className={styles.bottomStripe} />
         </div>

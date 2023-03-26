@@ -7,44 +7,28 @@
 .select {
     height: 49px;
     background: $color-primary;
-    padding: 0 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 16px;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 25px;
-    color: white;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+
+    padding: 0 20px;
+
+    color: $color-primary;
+    background: white;
+    border: 1px solid $color-primary;
 
     &:hover {
-        background: $color-primary-hover;
+        background: $color-primary-light;
     }
 
-    &.small {
-        padding: 0 21px;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 22px;
-
-        &.outlined {
-            padding: 0 20px;
-        }
-    }
-
-    &.outlined {
-        color: $color-primary;
-        background: white;
-        border: 1px solid $color-primary;
-
-        &:hover {
-            background: $color-primary-light;
-        }
-
-        &.open {
-            background: $color-primary;
-            color: white;
-        }
+    &.open {
+        background: $color-primary;
+        color: white;
     }
 }
 
