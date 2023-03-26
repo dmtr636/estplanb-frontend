@@ -1,0 +1,34 @@
+@import "src/styles/vars";
+
+.searchPanel {
+    display: flex;
+    padding: 25px 30px;
+    background: #ffffff;
+    box-shadow: 0px 0px 10px rgba(153, 226, 236, 0.45);
+    border-radius: 10px 0px 0px 0px;
+    position: relative;
+}
+
+.selectRoomNumbers {
+    width: 225px;
+    height: 46px;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.selectRoomNumbersDropdown {
+    left: -30px;
+    top: 70px;
+    width: 302px;
+    padding-top: 0;
+    padding-left: 30px;
+}
+
+.bottomStripe {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 500px;
+    height: 25px;
+    background: #ffffff;
+    z-index: 20;
+}

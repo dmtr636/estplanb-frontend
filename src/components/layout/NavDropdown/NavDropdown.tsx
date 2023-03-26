@@ -1,6 +1,6 @@
 import React, { ReactNode, useState } from "react";
 import classNames from "classnames";
-import Chevron from "@/assets/icons/chevronSmall.svg";
+import Chevron from "@/assets/icons/chevron.svg";
 import styles from "./style.module.scss";
 import Link from "next/link";
 

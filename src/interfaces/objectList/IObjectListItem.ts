@@ -26,5 +26,13 @@ export interface IObjectListItem {
             "locality-name": string;
         };
         description: string;
+        "sales-agent": {
+            name: string;
+            phone: string;
+            category: string;
+            organization: string;
+            email: string;
+            photo: string;
+        };
     };
 }

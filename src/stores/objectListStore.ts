@@ -10,6 +10,7 @@ class ObjectListStore {
 
     category: IFilterSelectOption = objectCategories[0];
     dealType: IFilterSelectOption = dealTypes[0];
+    roomNumbers: IFilterSelectOption[] = [];
 
     setCategory(category: IFilterSelectOption) {
         this.category = category;
@@ -19,11 +20,19 @@ class ObjectListStore {
         this.dealType = type;
     }
 
+    setRoomNumbers(roomNumbers: IFilterSelectOption[]) {
+        this.roomNumbers = roomNumbers;
+    }
+
     get preparedFilter() {
         return {
             ...this.category.filter,
             ...this.dealType.filter,
         };
+    }
+
+    get preparedRoomFilter() {
+        return this.roomNumbers.map((roomNumber) => roomNumber.filter);
     }
 }
 

@@ -1,5 +1,4 @@
 @import "src/styles/vars";
-@import "src/components/layout/Header/style.module";
 
 .container {
     position: relative;
@@ -8,7 +7,7 @@
 .select {
     height: 49px;
     background: $color-primary;
-    padding: 0 21px;
+    padding: 0 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,13 +20,50 @@
     &:hover {
         background: $color-primary-hover;
     }
+
+    &.small {
+        padding: 0 21px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+
+        &.outlined {
+            padding: 0 20px;
+        }
+    }
+
+    &.outlined {
+        color: $color-primary;
+        background: white;
+        border: 1px solid $color-primary;
+
+        &:hover {
+            background: $color-primary-light;
+        }
+
+        &.open {
+            background: $color-primary;
+            color: white;
+        }
+    }
 }
 
 .chevron {
     transition: transform ease-out 0.2s;
+    width: 21px;
+    height: 21px;
 
     &.open {
         transform: rotate(180deg);
+    }
+
+    &.small {
+        width: 16px;
+        height: 16px;
+    }
+
+    path {
+        stroke: currentColor;
     }
 }
 
@@ -45,15 +81,44 @@
 }
 
 .menuLink {
-    @include navLink;
     width: 100%;
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 16px;
     padding: 10px 16px;
-    text-align: start;
     white-space: nowrap;
-    border-radius: 5px;
+    color: $color-black;
+    transition: color ease-out 200ms;
+    z-index: 10;
+
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+
+    path {
+        stroke: currentColor;
+    }
 
     &:hover {
+        color: $color-primary;
         background: $color-primary-light;
+    }
+}
+
+.checkbox {
+    width: 32px;
+    height: 32px;
+    border: 1px solid $color-primary;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.checked {
+        background: $color-primary;
+    }
+
+    path {
+        stroke: white;
     }
 }

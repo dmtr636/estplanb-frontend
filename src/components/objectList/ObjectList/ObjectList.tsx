@@ -6,6 +6,7 @@ import ObjectMarketHeader from "@/components/objectList/ObjectListHeader/ObjectL
 import { useObjects } from "@/hooks/useObjects";
 import ObjectListItem from "@/components/objectList/ObjectListItem/ObjectListItem";
 import ObjectListItemSkeleton from "@/components/objectList/ObjectListItem/ObjectListItemSkeleton";
+import ObjectListSearchPanel from "@/components/objectList/ObjectListSearchPanel/ObjectListSearchPanel";
 
 const ObjectList = () => {
     const store = objectListStore;
@@ -15,9 +16,16 @@ const ObjectList = () => {
     return (
         <div className={styles.layout}>
             <ObjectMarketHeader />
+            <ObjectListSearchPanel />
             <div className={styles.list}>
                 {/*<ObjectListItemSkeleton />*/}
-                {isLoading && <ObjectListItemSkeleton />}
+                {isLoading && (
+                    <>
+                        <ObjectListItemSkeleton />
+                        <ObjectListItemSkeleton />
+                        <ObjectListItemSkeleton />
+                    </>
+                )}
                 {objects?.map((object, index) => (
                     <ObjectListItem
                         object={object}

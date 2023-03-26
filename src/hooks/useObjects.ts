@@ -16,6 +16,7 @@ export const useObjects = () => {
         limit: "50",
         offset: "0",
         filter: JSON.stringify(store.preparedFilter),
+        room_filter: JSON.stringify(store.preparedRoomFilter),
     };
     url.search = new URLSearchParams(params).toString();
 

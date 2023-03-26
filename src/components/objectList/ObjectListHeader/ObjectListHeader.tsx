@@ -21,13 +21,17 @@ const ObjectListHeader = () => {
                     options={objectCategories}
                     selectedOption={store.category}
                     onChange={(option) => store.setCategory(option)}
-                    className={styles.selectCategory}
+                    classes={{
+                        select: styles.selectCategory,
+                    }}
                 />
                 <Select
                     options={dealTypes}
                     selectedOption={store.dealType}
                     onChange={(option) => store.setDealType(option)}
-                    className={styles.selectDealType}
+                    classes={{
+                        select: styles.selectDealType,
+                    }}
                 />
             </div>
         </div>

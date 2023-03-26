@@ -82,6 +82,11 @@
     }
 }
 
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
 .address {
     display: flex;
     align-items: center;
@@ -105,6 +110,72 @@
     margin-top: 32px;
     font-weight: 400;
     font-size: 14px;
+    line-height: 120%;
+    color: $color-black;
+    opacity: 0.5;
+}
+
+.bottom {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.agent {
+    display: flex;
+    gap: 14px;
+}
+
+.agentPhoto {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+        object-fit: cover;
+    }
+}
+
+.agentName {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+    color: $color-primary;
+}
+
+.agentType {
+    margin-top: 3px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    color: $color-black;
+    opacity: 0.4;
+}
+
+.agentPhone {
+    margin-top: 12px;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    color: $color-primary;
+}
+
+.price {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 120%;
+    color: $color-black;
+}
+
+.unitPrice {
+    margin-top: 8px;
+    font-weight: 600;
+    font-size: 16px;
     line-height: 120%;
     color: $color-black;
     opacity: 0.5;
